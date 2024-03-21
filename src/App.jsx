@@ -13,7 +13,6 @@ function App() {
       <p className='theme' id='theme'>THEME</p>
       <Temas/>
       </div>
-      <Pantalla/>
       <Calculadora/>
     </div>
   )

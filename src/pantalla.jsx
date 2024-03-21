@@ -1,9 +1,9 @@
 import './App.css'
 
-export function Pantalla(){
+export function Pantalla({numeroVisualizado}){
     return(
         <div className='pantalla'>
-            3.99
+            {numeroVisualizado}
         </div>
     )
 }
