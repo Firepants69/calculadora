@@ -1,6 +1,80 @@
-body{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  background-color:rgb(59, 70, 100);
-}
+:root {
+    --textos_botones_arriba: rgb(66, 76, 87);
+    --botones_arriba_fondo: rgb(234, 227, 219);
+    --sombra_botones_arriba_fondo: rgba(234, 227, 219, 50%);
+    --cuadro_fondo: rgb(37, 45, 68);
+    --fondo_botones_arriba_del: rgb(100, 114, 153);
+    --sombra_botones_arriba_del: rgb(100, 114, 153, 50%);
+    --texto_botones_arriba_del: white;
+    --fondo_botones_arriba_del_active: rgb(131, 148, 195);
+    --sombra_botones_arriba_del_active: rgb(100, 114, 153, 50%);
+    --fondo_botones_arriba_active: rgb(255, 255, 255);
+    --fondo-igual: rgb(209, 63, 48);
+    --texto-igual: white;
+    --sombra-igual: rgb(209, 63, 48, 50%);
+    --fondo-igual-active: rgb(255, 29, 4);
+    --sombra-igual-active: rgb(255, 29, 4, 50%);
+    --pantalla-fondo: rgb(23, 31, 50);
+    --pantalla-texto: white;
+    --slider-fondo: rgb(37, 45, 68);
+    --slider-bola-fondo: rgb(219, 84, 69);
+    --slider-bola-fondo-hover: rgb(243, 95, 79);
+    --fondo_selector_tema: white;
+    --fondo_body:rgb(59, 70, 100);
+  }
+  
+  [data-theme="tema2"]{
+    --textos_botones_arriba:rgb(55, 54, 45);
+    --botones_arriba_fondo:rgb(229, 228, 226);
+    --sombra_botones_arriba_fondo:rgb(229, 228, 226,50%);
+    --cuadro_fondo: rgb(211, 205, 205);
+    --fondo_botones_arriba_del: rgb(56, 129, 134);
+    --sombra_botones_arriba_del: rgb(56, 129, 134,50%);
+    --texto_botones_arriba_del: white;
+    --fondo_botones_arriba_del_active: rgba(62, 139, 145);
+    --sombra_botones_arriba_del_active:  rgba(62, 139, 145,50%);
+    --fondo_botones_arriba_active: rgb(255, 255, 255);
+    --fondo-igual: rgb(209, 63, 48);
+    --texto-igual: white;
+    --sombra-igual: rgb(209, 63, 48, 50%);
+    --fondo-igual-active: rgb(214, 32, 12);
+    --sombra-igual-active: rgb(214, 32, 12,50%);
+    --pantalla-fondo:rgb(238, 238, 238);
+    --pantalla-texto:black;
+    --slider-fondo:rgb(211, 205, 205);
+    --slider-bola-fondo:rgb(202, 81, 0);
+    --slider-bola-fondo-hover:rgb(202, 81, 0,75%);
+    --fondo_selector_tema:black;
+    --fondo_body: rgb(230, 230, 230);
+  
+  }
+  
+  [data-theme="tema3"]{
+    --textos_botones_arriba:rgb(255, 231, 85);
+    --botones_arriba_fondo:rgb(51, 27, 77);
+    --sombra_botones_arriba_fondo:rgb(86, 7, 124);
+    --cuadro_fondo:rgb(30, 8, 54);
+    --fondo_botones_arriba_del:rgb(86, 7, 124);
+    --sombra_botones_arriba_del: rgb(129, 12, 183);
+    --texto_botones_arriba_del: white;
+    --fondo_botones_arriba_del_active:rgb(86, 7, 124,50%);
+    --sombra_botones_arriba_del_active: rgb(129, 12, 183,50%);
+    --fondo_botones_arriba_active:rgb(51, 27, 77,50%);
+    --fondo-igual:rgb(0, 222, 207);
+    --texto-igual:black;
+    --sombra-igual: rgb(110, 247, 239);
+    --fondo-igual-active: rgb(0, 222, 207);
+    --sombra-igual-active:rgb(110, 247, 239,50%);
+    --pantalla-fondo:rgb(30, 8, 54);
+    --pantalla-texto:rgb(255, 231, 85);
+    --slider-fondo:rgb(30, 8, 54);
+    --slider-bola-fondo:rgb(4, 219, 213);
+    --slider-bola-fondo-hover: rgb(4, 219, 213,75%);
+    --fondo_selector_tema:rgb(255, 231, 85);
+    --fondo_body:rgb(23, 6, 42);
+  
+  }
+
+  * {
+    transition: all 0.2s ease-in-out;
+  }

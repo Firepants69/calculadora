@@ -2,8 +2,8 @@ import './App.css'
 
 export function Pantalla({numeroVisualizado}){
     return(
-        <div className='pantalla'>
+        <h1 className='pantalla'>
             {numeroVisualizado}
-        </div>
+        </h1>
     )
 }
