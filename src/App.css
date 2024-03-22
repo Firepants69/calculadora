@@ -1,91 +1,121 @@
+:root {
+  --textos_botones_arriba: rgb(66, 76, 87);
+  --botones_arriba_fondo: rgb(234, 227, 219);
+  --sombra_botones_arriba_fondo: rgba(234, 227, 219, 50%);
+  --cuadro_fondo: rgb(37, 45, 68);
+  --fondo_botones_arriba_del: rgb(100, 114, 153);
+  --sombra_botones_arriba_del: rgb(100, 114, 153, 50%);
+  --texto_botones_arriba_del: white;
+  --fondo_botones_arriba_del_active: rgb(131, 148, 195);
+  --sombra_botones_arriba_del_active: rgb(100, 114, 153, 50%);
+  --fondo_botones_arriba_active: rgb(255, 255, 255);
+  --fondo-igual: rgb(209, 63, 48);
+  --texto-igual: white;
+  --sombra-igual: rgb(209, 63, 48, 50%);
+  --fondo-igual-active: rgb(255, 29, 4);
+  --sombra-igual-active: rgb(255, 29, 4, 50%);
+  --pantalla-fondo: rgb(23, 31, 50);
+  --pantalla-texto: white;
+  --slider-fondo: rgb(37, 45, 68);
+  --slider-bola-fondo: rgb(219, 84, 69);
+  --slider-bola-fondo-hover: rgb(243, 95, 79);
+  --fondo_selector_tema: white;
+}
 
-.botones_principales{
+
+.botones_principales {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 300px;
+  width: 100%;
   height: 230px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  
+
 }
-.botones-abajo{
+
+.botones-abajo {
   display: grid;
-      
+
 }
-.cuadro{
-  background-color: rgb(37, 45, 68);    
+
+.cuadro {
+  background-color: var(--cuadro_fondo);
   border-radius: 5px;
-  width: 300x;
+  width: 100%;
   padding: 25px 25px 25px 25px;
 
 }
-.botones-arriba{
+
+.botones-arriba {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:rgb(234, 227, 219);
-  color: rgb(66, 76, 87);
-  box-shadow: 0px 3px 0px rgba(234, 227, 219,50%);
+  background-color: var(--botones_arriba_fondo);
+  color: var(--textos_botones_arriba);
+  box-shadow: 0px 3px 0px var(--sombra_botones_arriba_fondo);
   border: none;
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 2rem;
   font-family: "League Spartan", sans-serif;
 }
-.botones-arriba-del{
+
+.botones-arriba-del {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(100, 114, 153);
-  color: white;
-  box-shadow: 0px 3px 0px rgb(100, 114, 153,50%);
+  background-color: var(--fondo_botones_arriba_del);
+  box-shadow: 0px 3px 0px var(--sombra_botones_arriba_del);
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  color: white;
+  color: var(--texto_botones_arriba_del);
   font-weight: bold;
-  font-size: 23px;
+  font-size: 2rem;
   font-family: "League Spartan", sans-serif;
-  transition: box-shadow,background-color 0.15s;
+  transition: box-shadow, background-color 0.15s;
 
 }
-.botones-arriba-del:active{
-  background-color: rgb(131, 148, 195);
-  box-shadow: 0px 3px 0px rgb(100, 114, 153,50%);
-}
-.botones-arriba:active{
-  background-color: rgb(255, 255, 255);
+
+.botones-arriba-del:active {
+  background-color: var(--fondo_botones_arriba_del_active);
+  box-shadow: 0px 3px 0px var(--sombra_botones_arriba_del_active);
 }
 
-.botones-abajo{
+.botones-arriba:active {
+  background-color: var(--fondo_botones_arriba_active);
+}
+
+.botones-abajo {
   margin-top: 20px;
   height: 40px;
-  width: 300px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 20px;
 }
 
-#RESET{
-  background-color: rgb(100, 114, 153);
-  color: white;
-  box-shadow: 0px 3px 0px rgba(100, 114, 153,50%);
+#RESET {
+  background-color: var(--fondo_botones_arriba_del);
+  box-shadow: 0px 3px 0px var(--sombra_botones_arriba_del);
+  color: var(--texto_botones_arriba_del);
   border: none;
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: "League Spartan", sans-serif;
 
 }
-#igual{
+
+#igual {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:rgb(209, 63, 48);
-  color: white;
-  box-shadow: 0px 3px 0px rgb(209, 63, 48,50%);
+  background-color: var(--fondo-igual);
+  color: var(--texto-igual);
+  box-shadow: 0px 3px 0px var(--sombra-igual);
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -94,29 +124,31 @@
   font-family: "League Spartan", sans-serif;
 
 }
-#igual:active{
-  background-color:rgb(255, 29, 4);
-  box-shadow: 0px 3px 0px rgb(255, 29, 4,50%);
-  
-}
-#RESET:active{
-  background-color: rgb(131, 148, 195);
-  box-shadow: 0px 3px 0px rgb(131, 148, 195,50%);
+
+#igual:active {
+  background-color: var(--fondo-igual-active);
+  box-shadow: 0px 3px 0px var(--sombra-igual-active);
 }
 
-.pantalla{
-  background-color:rgb(23, 31, 50);
+#RESET:active {
+  background-color: var(--fondo_botones_arriba_del_active);
+  box-shadow: 0px 3px 0px var(--sombra_botones_arriba_del_active);
+}
+
+.pantalla {
+  background-color: var(--pantalla-fondo);
   border: none;
+  width: 109%;
   border-radius: 7px;
-  height: 75px;
+  height: 5rem;
   margin-bottom: 15px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right:20px ;
-  color: white;
+  padding-right: 20px;
+  color: var(--pantalla-texto);
   font-weight: bold;
-  font-size: 35px;
+  font-size: 2rem;
   font-family: "League Spartan", sans-serif;
 }
 
@@ -129,12 +161,12 @@
 
 }
 
-.selector2{
+.selector2 {
   -webkit-appearance: none;
   appearance: none;
-  background:rgb(37, 45, 68);
-  padding:3px;
-  cursor:pointer;
+  background: var(--slider-fondo);
+  padding: 3px;
+  cursor: pointer;
   border-radius: 30px;
   width: 35px;
   height: 10px;
@@ -144,50 +176,62 @@
 .selector2::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 10px; /* Ajusta el ancho del pulgar */
-  height: 10px; /* Ajusta la altura del pulgar */
-  background: rgb(219, 84, 69); /* Color del pulgar */
-  border-radius: 50%; /* Hace que el pulgar sea redondo */
+  width: 10px;
+  /* Ajusta el ancho del pulgar */
+  height: 10px;
+  /* Ajusta la altura del pulgar */
+  background: var(--slider-bola-fondo);
+  /* Color del pulgar */
+  border-radius: 50%;
+  /* Hace que el pulgar sea redondo */
   cursor: pointer;
 }
-.selector2::-webkit-slider-thumb:hover{
-  background: rgb(243, 95, 79);
+
+.selector2::-webkit-slider-thumb:hover {
+  background: var(--slider-bola-fondo-hover);
 }
 
 /*
 contenedor-selector
 */
 
-.contenedor-selector{
-  width: 100%;
+.contenedor-selector {
+  width: 114%;
   display: flex;
-  align-items: center; 
+  align-items: center;
   grid-template-columns: repeat(3, 1fr);
   font-family: "League Spartan", sans-serif;
   font-weight: bold;
-  font-size: 20px;
-  color: white;
+  font-size: 1.1rem;
+  color: var(--fondo_selector_tema);
 }
 
-.theme{
-  flex: 1; /* Hace que los párrafos ocupen todo el espacio disponible */
-  text-align: center; /* Centra el texto horizontalmente */
+.theme {
+  flex: 1;
+  /* Hace que los párrafos ocupen todo el espacio disponible */
+  text-align: center;
+  /* Centra el texto horizontalmente */
   margin-bottom: 16px;
 }
 
-#cal{
+#cal {
   margin-right: 70%;
   margin-bottom: 10px;
 }
-#theme{
+
+#theme {
   margin-right: 1px;
   margin-top: 26px;
-  font-size: 8px;
+  font-size: 0.6rem;
 }
 
-.selector3{
+.selector3 {
   margin: 0px;
-  font-size: 8px;
+  font-size: 0.5rem;
   letter-spacing: 4px;
   margin-left: 3px;
+}
+
+.calculadora {
+  width: 100%;
 }
