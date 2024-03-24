@@ -9,7 +9,7 @@ export function ThemeSelector() {
     } else if (rango == 3) {
         document.querySelector("body").setAttribute('data-theme', 'tema3');
     } else {
-        document.querySelector("body").setAttribute('data-theme', '');
+        document.querySelector("body").setAttribute('data-theme', 'root');
     }
 
 

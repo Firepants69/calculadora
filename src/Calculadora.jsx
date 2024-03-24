@@ -3,12 +3,12 @@ import './App.css';
 import { Pantalla } from './pantalla';
 import { formatoOperacion, LimpiarOperacion } from './calculadoraLogica.js'
 
-const stilopantalla = document.querySelector("#pantalla")
-const tema = document.querySelector('body').getAttribute('data-theme')
+
 
 
 export function Calculadora() {
   const [strCalculadora, setStrCalculadora] = useState("")
+  const tema = document.querySelector('body').getAttribute('data-theme')
 
 
 
