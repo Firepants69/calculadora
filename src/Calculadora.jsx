@@ -43,6 +43,9 @@ export function Calculadora() {
   const igual = () => {
     const operacionVirgen = LimpiarOperacion(strCalculadora)
     const resultado = eval(operacionVirgen).toString()
+    if (resultado == "Infinity") {
+      throw new TypeError("no se puede dividir entre 0")
+    }
 
     if (resultado.length >= 19) {
       const resultadoRecortado = resultado.slice(0, 19);
