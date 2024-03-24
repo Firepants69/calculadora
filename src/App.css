@@ -112,7 +112,7 @@
   box-shadow: 0px 3px 0px var(--sombra_botones_arriba_del_active);
 }
 
-.pantalla {
+#pantalla {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -218,10 +218,10 @@ contenedor-selector
   width: 100%;
 }
 
-body{
+body {
   display: flex;
   text-align: center;
   justify-content: center;
-  background-color:var(--fondo_body);
+  background-color: var(--fondo_body);
 
 }

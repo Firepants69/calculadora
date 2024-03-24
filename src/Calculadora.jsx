@@ -3,26 +3,41 @@ import './App.css';
 import { Pantalla } from './pantalla';
 import { formatoOperacion, LimpiarOperacion } from './calculadoraLogica.js'
 
+const stilopantalla = document.querySelector("#pantalla")
+const tema = document.querySelector('body').getAttribute('data-theme')
+
+
 export function Calculadora() {
   const [strCalculadora, setStrCalculadora] = useState("")
 
 
 
   const TeclearSimbolos = (simbolo) => {
-    if (simbolo == "0" && strCalculadora.length == 0) {
+    if (strCalculadora === "Syntax Error") {
+      setStrCalculadora("")
+      setStrCalculadora(simbolo)
+    }
+    else if (simbolo == "0" && strCalculadora.length == 0) {
       setStrCalculadora("")
     } else {
       if (strCalculadora.length >= 19) {
         setStrCalculadora(strCalculadora)
 
-      } else { setStrCalculadora(formatoOperacion(strCalculadora + simbolo)) }
+      } else {
+        const operacionLimpia = LimpiarOperacion(strCalculadora)
+        setStrCalculadora(formatoOperacion(operacionLimpia + simbolo))
+      }
     }
   }
 
 
   const Del = () => {
-    const variante = strCalculadora.slice(0, strCalculadora.length - 1)
-    setStrCalculadora(variante)
+    if (strCalculadora === "Syntax Error") {
+      setStrCalculadora("")
+    } else {
+      const variante = strCalculadora.slice(0, strCalculadora.length - 1)
+      setStrCalculadora(variante)
+    }
   }
 
   const igual = () => {
@@ -38,7 +53,18 @@ export function Calculadora() {
       setStrCalculadora(formatoOperacion(resultado))
     }
   }
-  console.log(strCalculadora)
+
+  const reset = () => {
+    if (strCalculadora === "Syntax Error") {
+      setStrCalculadora("")
+    } else {
+      setStrCalculadora("")
+    }
+
+  }
+
+  console.log(strCalculadora, tema)
+
 
 
   return (
@@ -66,9 +92,16 @@ export function Calculadora() {
           </div>
           <div className="botones-abajo">
             <button id='RESET' onClick={() => {
-              setStrCalculadora("")
+              reset()
             }}>RESET</button>
-            <button id='igual' onClick={() => igual()}>=</button>
+            <button id='igual' onClick={() => {
+              try {
+                igual()
+              } catch {
+                setStrCalculadora("Syntax Error")
+              }
+
+            }}>=</button>
           </div>
         </div>
       </section>
