@@ -13,6 +13,7 @@ export function ThemeSelector() {
     }
 
 
+
     return (
         <div className='contenedor-selector' >
             <p className='theme' id='cal' >calc</p>

@@ -225,3 +225,25 @@ body {
   background-color: var(--fondo_body);
 
 }
+
+
+#ErrorSyntaxis {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--pantalla-fondo);
+  border: none;
+  width: 109%;
+  border-radius: 7px;
+  height: 6rem;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  padding-right: 5%;
+  color: var(--ColorErrorSyntaxisTexto);
+  font-weight: bold;
+  font-size: 2.8rem;
+  font-family: "League Spartan", sans-serif;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -2,22 +2,20 @@ import { useState } from 'react';
 import './App.css';
 import { Pantalla } from './pantalla';
 import { formatoOperacion, LimpiarOperacion } from './calculadoraLogica.js'
-
-
+import { ErrorSyntaxis } from './ErrorSyntaxis.jsx';
 
 
 export function Calculadora() {
   const [strCalculadora, setStrCalculadora] = useState("")
   const tema = document.querySelector('body').getAttribute('data-theme')
-
+  const [Error, setError] = useState(false);
 
 
   const TeclearSimbolos = (simbolo) => {
-    if (strCalculadora === "Syntax Error") {
-      setStrCalculadora("")
-      setStrCalculadora(simbolo)
+    if (Error == true) {
+      setError(false)
     }
-    else if (simbolo == "0" && strCalculadora.length == 0) {
+    if (simbolo == "0" && strCalculadora.length == 0) {
       setStrCalculadora("")
     } else {
       if (strCalculadora.length >= 19) {
@@ -32,12 +30,13 @@ export function Calculadora() {
 
 
   const Del = () => {
-    if (strCalculadora === "Syntax Error") {
-      setStrCalculadora("")
+    if (Error == true) {
+      setError(false)
     } else {
       const variante = strCalculadora.slice(0, strCalculadora.length - 1)
       setStrCalculadora(variante)
     }
+
   }
 
   const igual = () => {
@@ -58,12 +57,8 @@ export function Calculadora() {
   }
 
   const reset = () => {
-    if (strCalculadora === "Syntax Error") {
-      setStrCalculadora("")
-    } else {
-      setStrCalculadora("")
-    }
-
+    setError(false)
+    setStrCalculadora("")
   }
 
   console.log(strCalculadora, tema)
@@ -73,7 +68,7 @@ export function Calculadora() {
   return (
     <div className='calculadora' >
       <section>
-        <Pantalla numeroVisualizado={strCalculadora}></Pantalla>
+        {Error ? <ErrorSyntaxis /> : <Pantalla numeroVisualizado={strCalculadora} />}
         <div className='cuadro'  >
           <div className='botones_principales'>
             <button className='botones-arriba' onClick={() => TeclearSimbolos("7")}>7</button>
@@ -101,7 +96,8 @@ export function Calculadora() {
               try {
                 igual()
               } catch {
-                setStrCalculadora("Syntax Error")
+                reset()
+                setError(true)
               }
 
             }}>=</button>
